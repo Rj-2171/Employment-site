@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NewBiz Bootstrap Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="/assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/assets/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/assets/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: NewBiz
+    Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <a href="/" class="scrollto"><img src="/assets/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#intro">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+           <!-- <li class="drop-down"><a href="">Drop Down</a>
+            <ul>
+                  <li class="active"><a href="#intro">Home</a></li>
+                  <li><a href="#about">About Us</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#portfolio">Portfolio</a></li>
+                  <li><a href="#team">Team</a></li>      
+                  <li><a href="#contact">Contact Us</a></li>              
+              </ul>
+          </li> -->
+          <li><a href="#contact">Contact Us</a></li>
+            <li><a href="/login" class="btn-get-started scrollto">Login</a></li> 
+        </ul>
+           
+      </nav><!-- .main-nav -->
+      
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  
+  <section id="intro">
+    <div class="container">
+       <div class="row ">
+            <div class="card">
+              <img class="card-img-top" src="/assets/img/intro-bg.png" alt="Card image cap"  height="250px">
+              <div class="card-body">
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-4" >
+                      <img  src="<%=Users.photo%>" height="180px" width="180px"
+                       style= "position: absolute; 
+                               border-radius: 8%;
+                               top: -100px;
+                               left: 60px;
+                               vertical-align: middle;
+                      border-style: none;" alt="Profile Image">
+                        
+                        <h5 class="card-title" style= "    margin-top: 100px; "><%=Users.uname%></h5>
+                        <small class="text-muted">Bangalore, India</small>
+                    </div>
+                    <div class="col-md">
+                           
+<!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="float: right;
+        margin-right: 23px;">
+           <i class="fa fa-pencil" aria-hidden="true"></i> Edit 
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Edit Bio</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                      <form action="/editcorp" method="post" enctype="multipart/form-data">
+                          <div class="form-group">
+                            
+                              <div class="circle">
+            <img class="studentprofile-pic" src="<%=Users.photo%>"  onerror="this.src='https://image.flaticon.com/icons/png/128/149/149452.png'" style="border-radius: 8%;
+                               height:150px;
+                               width:150px;
+                               vertical-align: middle;
+                      border-style: none;" >
+               <i class="fa fa-camera upload-button p-image" style="position:absolute "></i>
+        <input class="file-upload" name="image"   type="file" accept="image/*" value="" style="display:none">
+        </div>
+                              
+                              
+                              
+                              <label for="inputEmail4">Name</label>
+                              <input type="text" name="uname" class="form-control" id="inputEmail4" placeholder="Name">  
+                          </div>
+            
+                          
+                          <div class="form-group">
+                            <label for="inputAddress">Bio</label>
+                            <textarea class="form-control" name="bio" id="inputAddress" rows="5"></textarea>
+                          </div>
+                          
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputCity">City</label>
+                              <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputState">State</label>
+                              <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                              <label for="inputZip">Zip</label>
+                              <input type="text" class="form-control" id="inputZip">
+                            </div>
+                          </div>
+                         
+                          <button type="submit" class="btn btn-primary">Sign in</button>
+                        </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+<!-- Button trigger modal -->
+                              <h2>Graphic Designer</h2>
+                              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                          
+                              <div class="card"> <div class="card-body">
+                                    <h3>Skils<i  class="fa fa-pencil" aria-hidden="true" style="float: right; margin-right: 23px;"></i>  </h3>                                  
+                                  </div>
+                                    <ul class="list-group list-group-flush">
+                                      <li class="list-group-item">C++</li>
+                                      <li class="list-group-item">Python</li>
+                                      <li class="list-group-item">Node js</li>
+                                      <li class="list-group-item">PHP</li>
+                                    </ul>
+                                  <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                  </div>
+                                </div>
+
+
+
+
+                   
+                    </div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </div>
+  </section><!-- #intro -->
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>NewBiz</h3>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src="/assets/lib/jquery/jquery.min.js"></script>
+  <script src="/assets/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/lib/easing/easing.min.js"></script>
+  <script src="/assets/lib/mobile-nav/mobile-nav.js"></script>
+  <script src="/assets/lib/wow/wow.min.js"></script>
+  <script src="/assets/lib/waypoints/waypoints.min.js"></script>
+  <script src="/assets/lib/counterup/counterup.min.js"></script>
+  <script src="/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/assets/lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="/assets/lib/lightbox/js/lightbox.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="/assets/contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="/assets/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+
+    
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.studentprofile-pic').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+    
+    $(".upload-button").on('click', function() {
+       $(".file-upload").click();
+    });
+});
+    </script>
+
+</body>
+</html>
